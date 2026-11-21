@@ -28,8 +28,9 @@ jobs:
 
       - name: Install Android SDK pieces
         run: |
+          export JAVA_HOME="$JAVA_HOME_17_X64"
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
-          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-30" "build-tools;30.0.3" > /dev/null
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-30" "build-tools;30.0.3"
 
       - name: Build debug APK
         run: gradle assembleDebug --stacktrace
