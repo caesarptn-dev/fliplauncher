@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.flip.launcher"
+        minSdkVersion 7        // Android 2.1 Eclair and up (covers 2.2 Froyo / 2.3 Gingerbread)
+        targetSdkVersion 30
+        versionCode 2
+        versionName "2.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+// No third-party dependencies on purpose: smaller APK, less RAM, faster start.
